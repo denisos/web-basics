@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>js code basics</title>
+  </head>
+  <body>
+
+    <script>
+      // duplicate list passed
+      // [[1,2,3,4,5] => [1,2,3,4,5,1,2,3,4,5]
+      function duplicate(list) {
+        console.log(list.concat(list))
+        console.log([...list, ...list]);
+      }
+
+    </script>
+  </body>
+</html>

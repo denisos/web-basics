@@ -1,0 +1,173 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+
+    
+    <style>
+
+      .box {
+        width: 100px;
+        height: 100px;
+        background: blue;
+        padding: 10px;
+        border-top: 10px dotted ;
+        margin: 10px;
+        box-sizing: border-box;
+        /*display: inline;*/
+        background-color: red;
+
+      }
+
+      .text-inline bold {
+        padding: 10px;
+        display: inline-block;
+      }
+      .box-inheritence {
+        color: red;
+      }
+
+      .page-style {
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        color: #BD8100;
+        width: 900px;
+        margin: 0 auto;
+      }
+
+    </style>
+    
+  </head>
+  <body class="page-style">
+    <!-- This is your app root -->
+    <div id="root"></div>
+    
+    <hr />
+
+    <a href="#">Hi</a>
+
+    <a href='#' title="title" data-foo="dataFoo" class="yes" style="margin:0;" foo="boo"></a>
+
+    <div id="A"></div>
+    <span id="B"></span>
+    <div id="C"></div>
+    <div id="D"></div>
+    <div id="E"></div>
+
+    <div class="box">An interesting</div>
+
+    <div class="box-inheritence">
+      <p class="text-inline">You can't increase the <bold>padding and margin</bold> height of inline element and you setting height and width also has no impact. But if you chaneg it to inline-block then it will use padding & margin bottom & top
+      </p>
+    </div>
+
+    <ol >
+      <li style="display: inline-block;">One</li>
+      <li style="display: inline-block;">Two</li>
+      <li style="display: inline-block;">Three</li>
+    </ol>
+    
+
+    
+    <!-- You application logic goes here -->
+    <script>
+
+      /*
+      all node inherit from Node which is a js object that inherits from object
+        Node provides most all of the methods which are inherited
+        e.g.: HTMLAnchorElement -> HTMLElement -> Element -> Node -> Object
+        there's over 40 HTML*Element elements
+
+      nodes have nodeType and 
+
+      Element nodes are created when the browser parses an HTML document and creates the DOM. Can also create programatically
+       with document.createElement()
+
+      main create methods are: 
+       createElement          - pass tag name e.g. "div" e.g. document.createElement('div')
+       createTextNode         - pass text to ctor
+       createDocumentFragment - 
+      
+      ways to add elements and text nodes: 
+       - innerHTML, outerHTML, innerText, textContent e.g. document.getElementById('A').innerHTML = '<strong>Hi</strong>';
+       - insertAdjacentHTML
+      can also need innerHTML, outerHTML etc. as a getter
+
+      adding node objects (must pass a node)
+       appendChild  - must pass a node   document.querySelector('p').appendChild(document.createElement('strong'))
+       insertBefore - pass 
+
+      removing
+       removeChild   - you need to get the element and then call removeChild on the parent
+                         const divA = document.getElementById('A');
+                         divA.parentNode.removeChild(divA);
+       replaceChild
+
+      clone
+       cloneNode - duplicate a node and all its children (pass true) e.g.
+         let cloneUL = document.querySelector('ul').cloneNode();
+
+
+
+
+
+      */
+
+      console.log(Node.ELEMENT_NODE)
+      console.log(Node.TEXT_NODE)
+
+      console.log(Node)
+
+      // for(var key in Node){
+      //   console.log(key,' = '+Node[key]); 
+      // };
+
+      const n = document.createTextNode("howdy");
+      console.log("n.nodeValue", n.nodeValue)
+      var elementNode = document.createElement('div');
+      console.log("elementNode for div ", elementNode, " node type ", elementNode.nodeType);
+
+      var nodeAnchor = document.querySelector('a');
+      console.log(nodeAnchor.nodeName)
+      console.log(nodeAnchor.nodeType)
+      console.log(nodeAnchor.firstChild)
+      console.log(nodeAnchor.firstChild.nodeType)
+
+      console.log("document.nodeName", document.nodeName)
+      console.log("document.nodeType", document.nodeType)
+
+      var props = [];
+      for(var key in nodeAnchor){
+          props.push(key);   
+      }
+      console.log(props.sort());
+
+      // setting content
+      document.getElementById('A').innerHTML = '<strong>Hi</strong>';
+      document.getElementById('B').outerHTML = '<div id="Z" class="new">Whats Shaking</div>'
+      document.getElementById('D').innerText = 'Keep it';
+      document.getElementById('C').textContent = 'dude';
+
+      // var divA = document.getElementById('A');
+      // divA.parentNode.removeChild(divA);
+
+      const myN = new HTMLDivElement.constructor
+      console.log(myN)
+
+      const ta = document.createElement("textarea")
+      document.body.appendChild(ta)
+
+      document.body.appendChild(document.createElement("input"))
+      document.body.appendChild(document.createElement("button"))
+
+      let attrs = document.querySelectorAll('a')[1].attributes;
+      console.log(attrs)
+      for (attr of attrs) {
+        console.log(attr.nodeName +'='+ attr.nodeValue);
+      }
+
+
+    </script>
+  
+  </body>
+</html>
