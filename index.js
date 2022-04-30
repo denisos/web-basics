@@ -195,8 +195,6 @@ function createChessGrid(size) {
         gridStr += (j % 2 === 0) ? ' ' : '#'
       }
     
-
-      // gridStr += (i % 2 === 0 && j % 2 !== 0) ? ' ' : '#';
     }
 
     gridStr +=  '\n';
