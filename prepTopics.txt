@@ -19,7 +19,6 @@ dropdown
 css and css frameworks
 accessibiility for web
 
-
 for general questions see: 
 https://github.com/h5bp/Front-end-Developer-Interview-Questions
 
