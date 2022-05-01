@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>A simple flexbox-based responsive design</title>
     <style>
+      @font-face {
+        font-family: 'alex_brushregular';
+        src: url('assets/alexbrush-regular-webfont.woff2') format('woff2'),
+            url('assets/alexbrush-regular-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+      }
+
       body {
         font: 1.2em Helvetica, Arial, sans-serif;
         margin: 20px;
         padding: 0;
         background-color: #eee;
+        font-family: 'alex_brushregular', Arial, Helvetica, sans-serif;
       }
       .wrapper {
         max-width: 960px;
