@@ -171,14 +171,14 @@ function range(start, end) {
   return (end) => buildRange(end);
 
 }
-console.log(range(3,3))
-console.log(range(3,8))
-console.log(range(3,0))
+// console.log(range(3,3))
+// console.log(range(3,8))
+// console.log(range(3,0))
 
 const start3 = range(3);
-console.log("start3 ", start3(9))
-console.log("start3 ", start3(12))
-console.log("start3 ", start3(2))
+console.log("start at 3 end at 9", start3(9))
+console.log("start at 3 end 12", start3(12))
+console.log("start 3 but empty because 2 < 3 ", start3(2))
 
 
 // grid
@@ -202,6 +202,38 @@ function createChessGrid(size) {
   return gridStr;
 }
 
-console.log(createChessGrid(8))
+console.log(createChessGrid(12))
+
+// function curry(...args) {
+//   return (...rest) {
+
+//   }
+// }
+
+function myBind(fn, obj) {
+  return (...args) => {
+    return fn.call(obj, ...args)
+  }
+}
+
+function add(...first) {
+  console.log("first is: ", first)
+  return (...second) => {
+    return first[0] + second[0];
+  }
+}
+const fAdd = add(5);
+let res = fAdd(6)
+console.log(res)
+res = fAdd(12)
+console.log(res)
+
+const myObj = { name: "jane" }
+function sayName(p2) { 
+  console.log(`Bound to object with ${this.name} and extra ${p2}`)
+}
+const boundSN = myBind(sayName, myObj)
+boundSN("plain")
+
 
 console.log("loaded");
