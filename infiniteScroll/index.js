@@ -25,12 +25,12 @@ fetch 5 at a time
 once page loads fetch 5 and append to end of container
 when user scrolls to the to bottom of container then fetch another 5 and append
 
-only 1 call at a time, so if pending then no other call issued
-once all fetched then no more calls
+only 1 api call at a time, so if pending then no other call issued
+once all fetched then issue no more calls
 use fetch
 listen to scroll events
 
-scrolledBottom if scrollHeight - scrollTop - clientHeight <= 0
+scrolled to bottom if for containing div: scrollHeight - scrollTop - clientHeight <= 0
 
 */
 
