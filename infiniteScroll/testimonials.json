@@ -1,0 +1,66 @@
+var testimonials = [
+  {
+    "message": "id 1 AlgoExpert was my go-to course to ace those coding interviews. I really liked the depth of explanation in the video tutorials and the user-friendly interface. I guess AlgoExpert and a lot of hard work makes everything possible (journey from pre-sales to development)!",
+    "id": 1
+  },
+  {
+    "message": "id 2 I would just like to point out that AlgoExpert helped me a lot to get an offer from Amazon - UK office (I accepted it). I think that AlgoExpert has everything you need in one place. It covers all important topics. I especially like the possibility to see hints in order to get an idea for the solution or to check the whole video explanation if necessary (which is very well explained!). You can literally prepare the whole coding part of the interview without changing the web browser tab.",
+    "id": 2
+  },
+  {
+    "message": "id 3 After reading a book on algorithms and data structures, I purchased AlgoExpert to prepare for interviews. Guys, seriously, this is an amazing product! I went through the questions at least 5 times before my interview. Now I am working at Google as a SWE. I honestly couldn't have gotten the offer without this product.",
+    "id": 3
+  },
+  {
+    "message": "id 4 AlgoExpert was instrumental to me getting the job at Microsoft. I was going through different sites and applications to help in my study of algorithms and data structures, but nothing was as thorough and clear as AlgoExpert. I am now starting as a Site Reliability Engineer II at Microsoft, thanks to this site!",
+    "id": 4
+  },
+  {
+    "message": "id 5 AlgoExpert helped me build a very solid foundation to tackle most of the common problems you can encounter during the interview. The most valuable feature, by far, is the video walkthroughs for each problem which makes you understand how to approach the problem. If you want to build/improve your toolset for solving problems, AlgoExpert is worth every penny. Well done.",
+    "id": 5
+  },
+  {
+    "message": "id 6 AlgoExpert was my go-to course to ace those coding interviews. I really liked the depth of explanation in the video tutorials and the user-friendly interface. I guess AlgoExpert and a lot of hard work makes everything possible (journey from pre-sales to development)!",
+    "id": 6
+  },
+  {
+    "message": "id 7I would just like to point out that AlgoExpert helped me a lot to get an offer from Amazon - UK office (I accepted it). I think that AlgoExpert has everything you need in one place. It covers all important topics. I especially like the possibility to see hints in order to get an idea for the solution or to check the whole video explanation if necessary (which is very well explained!). You can literally prepare the whole coding part of the interview without changing the web browser tab.",
+    "id": 7
+  },
+  {
+    "message": "id 8 After reading a book on algorithms and data structures, I purchased AlgoExpert to prepare for interviews. Guys, seriously, this is an amazing product! I went through the questions at least 5 times before my interview. Now I am working at Google as a SWE. I honestly couldn't have gotten the offer without this product.",
+    "id": 8
+  },
+  {
+    "message": "id 9 AlgoExpert was instrumental to me getting the job at Microsoft. I was going through different sites and applications to help in my study of algorithms and data structures, but nothing was as thorough and clear as AlgoExpert. I am now starting as a Site Reliability Engineer II at Microsoft, thanks to this site!",
+    "id": 9
+  },
+  {
+    "message": "id 10 AlgoExpert helped me build a very solid foundation to tackle most of the common problems you can encounter during the interview. The most valuable feature, by far, is the video walkthroughs for each problem which makes you understand how to approach the problem. If you want to build/improve your toolset for solving problems, AlgoExpert is worth every penny. Well done.",
+    "id": 10
+  },
+  {
+    "message": "id 11 AlgoExpert was my go-to course to ace those coding interviews. I really liked the depth of explanation in the video tutorials and the user-friendly interface. I guess AlgoExpert and a lot of hard work makes everything possible (journey from pre-sales to development)!",
+    "id": 11
+  },
+  {
+    "message": "id 12 would just like to point out that AlgoExpert helped me a lot to get an offer from Amazon - UK office (I accepted it). I think that AlgoExpert has everything you need in one place. It covers all important topics. I especially like the possibility to see hints in order to get an idea for the solution or to check the whole video explanation if necessary (which is very well explained!). You can literally prepare the whole coding part of the interview without changing the web browser tab.",
+    "id": 12
+  },
+  {
+    "message": "id 13 After reading a book on algorithms and data structures, I purchased AlgoExpert to prepare for interviews. Guys, seriously, this is an amazing product! I went through the questions at least 5 times before my interview. Now I am working at Google as a SWE. I honestly couldn't have gotten the offer without this product.",
+    "id": 13
+  },
+  {
+    "message": "id 14 AlgoExpert was instrumental to me getting the job at Microsoft. I was going through different sites and applications to help in my study of algorithms and data structures, but nothing was as thorough and clear as AlgoExpert. I am now starting as a Site Reliability Engineer II at Microsoft, thanks to this site!",
+    "id": 14
+  },
+  {
+    "message": "id 15 AlgoExpert helped me build a very solid foundation to tackle most of the common problems you can encounter during the interview. The most valuable feature, by far, is the video walkthroughs for each problem which makes you understand how to approach the problem. If you want to build/improve your toolset for solving problems, AlgoExpert is worth every penny. Well done.",
+    "id": 15
+  },
+  {
+    "message": "id 16 AlgoExpert helped me build a very solid foundation to tackle most of the common problems you can encounter during the interview. The most valuable feature, by far, is the video walkthroughs for each problem which makes you understand how to approach the problem. If you want to build/improve your toolset for solving problems, AlgoExpert is worth every penny. Well done.",
+    "id": 16
+  },
+]
