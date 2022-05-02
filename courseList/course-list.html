@@ -14,6 +14,38 @@
       .category {
         flex: 1 1 300px;
       }
+
+      .question {
+        border-radius: 4px;
+        border: 1px solid gray;
+        color: green;
+        padding: 2px 0 2px 10px;
+        margin: 8px 8px;
+        display: flex;
+        align-items: center;
+      }
+      .question h3 {
+        margin: 4px 4px 4px 0;
+      }
+      .question .correct,
+      .question .incorrect,
+      .question .partially_correct,
+      .question .unattempted    {
+        width: 10px;
+        height: 10px;
+        background-color: green;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .question .incorrect {
+        background-color: red;
+      }
+      .question .partially_correct {
+        background-color: yellow;
+      }
+      .question .unattempted {
+        background-color: #fff;
+      }
     </style>
   </head>
   <body>
@@ -28,6 +60,7 @@
     </div>
 
     <script type="text/javascript" src="courses.json"></script>
+    <script type="text/javascript" src="submissions.json"></script>
     <script type="text/javascript" src="courseList.js">
     </script>
   </body>

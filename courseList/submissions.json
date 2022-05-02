@@ -1,0 +1,14 @@
+var submissions = [ 
+  {
+    "questionId": "blog-post",
+    "status": "CORRECT"
+  },
+  {
+    "questionId": "stopwatch",
+    "status": "PARTIALLY_CORRECT"
+  },
+  {
+    "questionId": "debounce",
+    "status": "INCORRECT"
+  }
+]
