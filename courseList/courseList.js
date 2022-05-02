@@ -6,13 +6,13 @@ console.log("Course List")
 
 function getApiSubmissions() {
   // return fetch('https://www.algoexpert.io/api/fe/submissions');
-  return Promise.resolve(submissions)
+  return Promise.resolve(submissions);  // so can run locally in browser
 }
 
 
 function getApiCourses() {
   // return fetch('https://www.algoexpert.io/api/fe/questions');
-  return Promise.resolve(courses)
+  return Promise.resolve(courses);     // so can run locally in browser
 }
 
 // convert to a map keyed by course category
@@ -90,17 +90,7 @@ async function getCoursesData() {
     .catch(err => {
       console.log("An Error happened ", err)
     });
-  
-  // coursesResponse = await getCourses();
-  // if (coursesResponse.status === 'error') {
-  //   displayError();
-  //   return;
-  // }
-
-  // const organizedCourses = organizeCourses(coursesResponse.courses);
 }
-
-
 
 
 
@@ -162,12 +152,21 @@ function displayCourseUI(organizedCourses) {
     //   create a category with title
     const category = createDomCategory(key);
 
+    let correctAnswers = 0;
+
     // for each value
     //   create a question
     //   append to category
     courses.questions.forEach(question => {
+      if (question.submissionStatus?.toLowerCase() === 'correct') {
+        correctAnswers++
+      }
       category.appendChild(createDomQuestion(question));
     })
+
+    let categoryTitle = category.querySelector("h2").textContent
+    category.querySelector("h2").textContent = `${categoryTitle} - 
+      ${correctAnswers} / ${courses.questions.length}`;
 
     // append category
     allCategories.appendChild(category);
@@ -186,22 +185,3 @@ async function buildCourseUI() {
 }
 
 buildCourseUI();   // kick it all off
-
-
-
-// 1. call 2nd api to get users question status which returns list of objects
-//  for any questions attempted
-//  show circle for entry based on response
-//   add div with class same as
-//   if not attempted include class unattempted
-//   e.g. <div class="status correct"></div>    as a peer of h3 element
-//
-// 2. add count; how many attempted of total
-//
-/*
-[ {
-  id: sameid
-  status: correct/incorrect/partially_correct  (green/red/yello)
-}]
-
-*/
