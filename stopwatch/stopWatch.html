@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+
+      .stopwatch-container {
+        margin: 20px auto;
+        border: 1px solid gray;
+        width: 200px;
+        height: 100px;
+        border-radius: 4px;
+      }
+
+      .stopwatch-container-timers {
+        display: flex;
+        justify-content: center;
+        margin: 15px;
+        box-shadow: 0 0 20px rgba(0,139,253,0.25);
+      }
+
+      .minutes, .seconds, .separator {
+        font-size: 24px;
+        font-family: 'Roboto mono',monospace;
+      }
+
+      .stopwatch-container-btns {
+        display: flex;
+        gap: 10px;
+        margin-left: 10px;
+      }
+
+      .start-btn, .stop-btn {
+        padding: 4px 10px;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+      }
+      .start-btn:hover, 
+      .stop-btn:hover  {
+        opacity: 80%;
+      }
+
+      .start-btn {
+        background-color:aquamarine;
+      }
+      .stop-btn {
+        background-color: red;
+      }
+    </style>
+    
+  </head>
+  <body class="page-style">
+    <main class="stopwatch-container">
+      <div class="stopwatch-container-timers">
+        <span class="minutes">00</span>
+        <span class="separator">:</span>
+        <span class="seconds">00</span>
+      </div>
+
+      <div class="stopwatch-container-btns">
+        <button class="start-btn">Start</button>
+        <button class="stop-btn">Stop</button>
+      </div>
+
+    </main>
+    
+    
+    <!-- stopwatch code -->
+    <script src="stopWatch.js"></script>
+  
+  </body>
+</html>
