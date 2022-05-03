@@ -236,7 +236,18 @@ const boundSN = myBind(sayName, myObj)
 boundSN("plain")
 
 
-
+function promisify(callback) {
+  return (...args) => {
+    return new Promise((resolve, reject) => {
+      try {
+        const result = callback(...args);
+        resolve(result)
+      } catch(err) {
+        reject(err)
+      }
+    })
+  }
+}
 
 
 

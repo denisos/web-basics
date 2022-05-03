@@ -2,19 +2,21 @@
 scoping
 closures
 prototype & inheritence
-async
+async                            😄
 memoization
 higher order functions
 fn that uses js techniques (clone, once, curry etc)
+  egghead couse with examples
 
-dom structure & manipulation     (ok)
+dom structure & manipulation     😄
 events 
 event bubbling
-semantic markup
+semantic markup                  😄
 using components and templating
 
-manage input and scroll long list of items
-dropdown
+manage input and scroll long list of items    😄
+dropdown   
+traffic lights
 
 css and css frameworks
 accessibiility for web
