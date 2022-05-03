@@ -236,4 +236,10 @@ const boundSN = myBind(sayName, myObj)
 boundSN("plain")
 
 
+
+
+
+
+
+
 console.log("loaded");

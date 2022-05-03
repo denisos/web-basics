@@ -7,7 +7,7 @@ memoization
 higher order functions
 fn that uses js techniques (clone, once, curry etc)
 
-dom structure & manipulation
+dom structure & manipulation     (ok)
 events 
 event bubbling
 semantic markup
@@ -21,4 +21,3 @@ accessibiility for web
 
 for general questions see: 
 https://github.com/h5bp/Front-end-Developer-Interview-Questions
-
