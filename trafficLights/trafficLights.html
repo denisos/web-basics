@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+
+      .lights-container {
+        margin: 20px auto;
+        width: 200px;
+
+      }
+      
+      .lights-container-lights {
+        background-color: #000;
+        border-radius: 4px;
+        margin: 5px;
+        width: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .light {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: gray;
+        border: 1px solid #fff;
+        margin: 5px;
+      }
+
+      .red {
+        background-color: red;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .green {
+        background-color: green;
+      }
+
+    </style>
+    
+  </head>
+  <body class="page-style">
+    <main class="lights-container">
+      <div class="lights-container-lights">
+        <div class="light red-light red"></div>
+        <div class="light yellow-light"></div>
+        <div class="light green-light"></div>
+      </div>
+
+      <div class="lights-container-btns">
+        <button class="start-btn">Start</button>
+        <button class="stop-btn">Stop</button>
+      </div>
+
+    </main>
+    
+    
+    <!-- lights code -->
+    <script src="trafficLights.js"></script>
+  
+  </body>
+</html>

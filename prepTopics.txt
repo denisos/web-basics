@@ -15,8 +15,10 @@ semantic markup                  😄
 using components and templating
 
 manage input and scroll long list of items    😄
-dropdown   
-traffic lights
+stop watch   😄
+typeahead   
+traffic lights  😄
+dom traversal
 
 css and css frameworks
 accessibiility for web
