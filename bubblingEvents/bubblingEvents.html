@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+
+      ul {
+        margin: 10px; 
+        background-color: green;
+        width: 300px;
+        padding: 10px;
+      }
+      li {
+        margin: 10px; 
+        background-color: orange;
+        list-style: none;
+        padding: 10px;
+        border-radius: 4px;
+      }
+
+    </style>
+    
+  </head>
+  <body class="page-style">
+    <h2>Demo event bubbling</h2>
+    <p>Check the console. The handler is on the green ul, not on any li. See what happens when click green and orange</p>
+
+    <ul id="bubble-list" class="bubble-list">
+      <li id="1">1st Item in the list</li>
+      <li id="2">2nd Item in the list</li>
+      <li id="3">3rd Item in the list</li>
+      <li id="4">4th Item in the list</li>
+      <li id="5">5th Item in the list</li>
+    </div>
+    
+    
+
+    <script>
+      const onClick = (selector, handler) => {
+        document.querySelector(selector).addEventListener('click', handler);
+      };
+
+
+      onClick('.bubble-list', (e) => {
+        // console.log(e.key)
+        // console.log("id clicked e.target.id)
+        // console.log(e.currentTarget)
+        
+        if (e.target === e.currentTarget) {
+          console.log("bubblelist you clicked the ul itself", e.target.id);
+          console.log("", e.currentTarget.id);
+          console.log("", e.currentTarget.tagName);
+        } else {
+          console.log("bubblelist you clicked a child", e.target.id);
+          console.log("", e.target.id);
+          console.log("", e.target.tagName);
+        }
+
+      });
+
+
+      document.body.addEventListener('click', function(e) {
+        console.log("document.body click handler called");
+      });
+
+    </script>
+  
+  </body>
+</html>
