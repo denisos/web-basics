@@ -1,23 +1,24 @@
 
 scoping
 closures
-prototype & inheritence
+javascript this                  😄   (js tricky question to determine the 'this' context (what will this function print, kind of question))
+prototype & inheritence          😄
 async                            😄
-memoization
-higher order functions
+memoization                      😄
+higher order functions           😄
 fn that uses js techniques (clone, once, curry etc)
   egghead couse with examples
 
 dom structure & manipulation     😄
-events 
-event bubbling
+events                           😄
+event bubbling                   😄
 semantic markup                  😄
 using components and templating
 
 manage input and scroll long list of items    😄
-stop watch   😄
+stop watch            😄
 typeahead   
-traffic lights  😄
+traffic lights        😄
 dom traversal
 
 css and css frameworks
@@ -25,3 +26,23 @@ accessibiility for web
 
 for general questions see: 
 https://github.com/h5bp/Front-end-Developer-Interview-Questions
+
+
+
+
+SF (two 1 hour session)
+1. focus on coding, algorithms, and data structures 
+2. dedicated to system design and subject matter expertise
+
+M (45 mins)
+- code in js and focus on getting to working solution (no syntax highlighting)
+- problem-solving and core CS fundamental skills (theory, algorithms, data
+structures, design patterns, recursion, graph / tree traversal, etc.)
+- javasript, html and css technical focus; know DOM apis
+- know the relative performance of JavaScript object and array
+operations. fix bottlenecks in code, articulate tradeoffs
+- know arryas, maps, sets DOM trees 
+- Big O and tree traversal
+- iteration, closures, scope, and writing asynchronous code. And be
+ready to show your understanding of what’s beneath the abstractions you use.
+- practice; can you solve two medium level in 15-20mins
