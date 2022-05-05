@@ -21,10 +21,37 @@
         border-radius: 4px;
       }
 
+      .theflyout {
+        display: none;
+      }
+      .theflyout section {
+        padding: 10px;
+      }
+      .flyout {
+        background-color: antiquewhite;
+        border: 1px solid gray;
+        border-radius: 4px;
+        display: block;
+        height: 100vh;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 50vw;
+        z-index: 10; 
+      }
+      
+
     </style>
     
   </head>
-  <body class="page-style">
+  <body>
+    <div id="flyout" class="theflyout">
+      <section>
+        <h3>You clicked a ul or li item</h3>
+        <p>just playing with flyout</p>
+      </section>
+    </div>
+
     <h2>Demo event bubbling</h2>
     <p>Check the console. The handler is on the green ul, not on any li. See what happens when click green and orange</p>
 
@@ -36,9 +63,11 @@
       <li id="5">5th Item in the list</li>
     </div>
     
+
     
 
     <script>
+      const flyout = document.getElementById('flyout');
       const onClick = (selector, handler) => {
         document.querySelector(selector).addEventListener('click', handler);
       };
@@ -58,6 +87,13 @@
           console.log("", e.target.id);
           console.log("", e.target.tagName);
         }
+
+        flyout.classList.add('flyout');
+
+        setTimeout(() => {
+          flyout.classList.remove('flyout');
+        }, 2000)
+
 
       });
 
