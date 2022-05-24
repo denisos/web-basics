@@ -9,6 +9,8 @@ higher order functions           😄
 fn that uses js techniques (clone, once, curry etc)
   egghead couse with examples
 
+vercel
+
 dom structure & manipulation     😄
 events                           😄
 event bubbling                   😄
