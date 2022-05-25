@@ -49,17 +49,21 @@ function getTmContainer() {
   return document.getElementById('testimonial-container');
 }
 function renderTestimonials(testimonials) {
+  console.log(testimonials);
+
   const tmContainer = getTmContainer();
 
-  console.log(testimonials)
+  // add updates to documentFragment to minize browser relows
+  const docFragment = document.createDocumentFragment();
 
-  // to-do: optimize dom updates
   testimonials.forEach(testimonial => {
     const message = document.createElement('p');
     message.classList.add('testimonial');
-    message.textContent = testimonial.message
-    tmContainer.appendChild(message);
+    message.textContent = testimonial.message;
+    docFragment.appendChild(message);
   });
+
+  tmContainer.appendChild(docFragment);
 }
 
 
@@ -68,11 +72,26 @@ function renderTestimonials(testimonials) {
 async function fetchAndRenderUI() {
   // fetch 
   const response = await getTestimonials(LIMIT);
-
   // render
-  renderTestimonials(response.testimonials);
+  if (response.testimonials.length > 0) {
+    renderTestimonials(response.testimonials);
+  }
 
   return response;
+}
+
+// utility fn to debounce a function
+function debounceFunction(callback, delay = 300) {
+  let timerId;
+
+  return () => {
+    clearTimeout(timerId);
+
+    timerId = setTimeout(() => {
+      timerId = undefined;
+      callback();
+    }, delay);
+  }
 }
 
 function buildTestimonialsUI() {
@@ -92,10 +111,10 @@ function buildTestimonialsUI() {
       if (hasNext) {
         // only call if not already requesting
         if (isFetching) {
-          console.log("getTestimonials called while still running, so return");
+          console.log("getTestimonials still running, so just return");
           return;
         }
-        console.log("getTestimonials called isRunning false, so call api");
+        console.log("getTestimonials is not Running, so call api");
 
         isFetching = true;
 
@@ -106,22 +125,18 @@ function buildTestimonialsUI() {
       }
     }
   });
+
   
   // fetch and render on more btn click
   const getMoreBtnEl =  document.getElementById('get-more');
-  getMoreBtnEl.addEventListener('click', async (e) => {
+  const debouncedFetchAndRender = debounceFunction(async () => {
     if (hasNext) {
-      // lets debounce clicks
-      clearTimeout(timerId);
-
-      timerId = setTimeout(async () => {
-        const response = await fetchAndRenderUI();
-        hasNext = response.hasNext;
-        
-        timerId = undefined;
-      }, 300);
+      const response = await fetchAndRenderUI();
+      hasNext = response.hasNext;
     }
   });
+
+  getMoreBtnEl.addEventListener('click', debouncedFetchAndRender);
 }
 
 // initial load and render
