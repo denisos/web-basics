@@ -1,0 +1,211 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+
+      ul {
+        width: 300px;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        list-style: none;
+      }
+      .address {
+        margin: 0 0 20px 0;
+      }
+
+      input.underline-only {
+        border: none;
+        border-bottom: 1px solid;
+        outline: none;
+      }
+      header {
+        display: flex;
+
+      }
+
+      .check-container {
+        display: flex;
+        justify-content: center;
+      }
+      .check-page {
+        margin: 10px;
+      }
+      /* .check-number-text-container {
+        margin-bottom: 20px;
+      } */
+      .row-margin {
+        margin-bottom: 20px;
+      }
+      .check-number-text {
+        display: inline-block;
+        width: 300px;
+        border-bottom: 1px solid black;
+      }
+
+    </style>
+    
+  </head>
+  <body>
+    <div class="check-container">
+      <div class="check-page">
+        <header>
+          <address class="address">
+            <ul>
+              <li>Acme corp</li>
+              <li>1 Main Street</li>
+              <li>San Francisco, CA 94115</li>
+            </ul>
+          </address>
+      
+          <div>104547</div>
+        </header>
+    
+        <main>
+          <label for="pay-to">Pay To
+            <input class="underline-only" type="text" maxlength="100">
+          </label>
+
+          <input 
+            type="text" 
+            id="check-number-input" 
+            maxlength="7" 
+            class="row-margin">
+
+          <div class="check-number-text-container row-margin">
+            <span class="check-number-text" id="check-number-text"></span>
+            <span>Dollars</span>
+          </div>
+        </main>
+    
+    
+        <footer>
+          <label for="memo">Memo</label>
+          <input class="underline-only" type="text" maxlength="30" id="memo" name="memo">
+        </footer>
+  
+      </div>
+    </div>
+
+    
+
+    
+
+    <script>
+      const convertToString = (function converter(num) {
+        const numMap = {
+          1: "One",
+          2: "Two",
+          3: "Three",
+          4: "Four",
+          5: "Five",
+          6: "Six",
+          7: "Seven",
+          8: "Eight",
+          9: "Nine",
+          10: "Ten",
+          11: "Eleven",
+          12: "Twelve",
+          13: "Thirteen",
+          14: "Fourteen",
+          15: "Fifteen",
+          16: "Sixteen",
+          17: "Seventeen",
+          18: "Eighteen",
+          19: "Nineteen",
+        };
+        const numMapTens = {
+          2: "Twenty",
+          3: "Thirty",
+          4: "Forty",
+          5: "Fifty",
+          6: "Sixty",
+          7: "Seventy",
+          8: "Eighty",
+          9: "Ninety"
+        }
+
+        function convertDecimalToString(decimal) {
+          return (decimal === 0) ? '': `and ${decimal}/100`;
+        }
+
+        function convertNumToString(num, str) {
+          // console.log('convertNumToString ', num, str);
+          const numAsStr = String(num);
+
+          if (num === 0) {
+            return str;
+          }
+
+          if (num <= 9) {
+            return `${str} ${numMap[num]} `;
+          } 
+
+          if (num >= 1000) {
+            const thousand = numAsStr.charAt(0)
+            str += numMap[thousand] + ' thousand '
+            return convertNumToString(num % 1000, str)
+          }
+
+          if (num >= 100) {
+            const hundred = numAsStr.charAt(0);
+            str += numMap[hundred] + ' hundred ';
+            return convertNumToString(num % 100, str);
+          }
+
+          if (num >= 10) {
+             if (num < 20) {
+                return `${str} ${numMap[numAsStr]} `;
+             } else {
+                const tens = numAsStr.charAt(0);
+                str = `${str} ${numMapTens[tens]} `;
+                return convertNumToString(num % 10, str);
+             }           
+          }
+        }
+
+        return function convertNumToStringEntry(num) {
+          // console.log('convertNumToStringEntry')
+          if (num <= 0) return '';
+
+          let wholeNum = num;
+          let decimal = 0;
+          if (String(num).includes('.')) {
+            wholeNum = parseInt(String(num).split('.')[0]);
+            decimal = String(num).split('.')[1]
+          }
+
+          if (wholeNum === 100) return `One hundred ${convertDecimalToString(decimal)}`;
+          if (wholeNum === 1000) return `One thousand ${convertDecimalToString(decimal)}`;
+
+          let numAsString = convertNumToString(wholeNum, '')
+
+          return `${numAsString} ${convertDecimalToString(decimal)}`;
+        }
+
+      })();
+      
+      const checkNumberText = document.getElementById('check-number-text');
+
+      document.getElementById('check-number-input')
+        .addEventListener('blur', (e) => {
+          console.log(e.target.value)
+          // first error checking
+          const num = parseFloat(e.target.value, 10);
+          const numAsString = convertToString(num);
+
+          // console.log("converted : ", numAsString);
+
+          checkNumberText.textContent = numAsString;
+        });
+
+    </script>
+  
+  </body>
+</html>
